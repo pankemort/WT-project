@@ -345,3 +345,21 @@ footer{
         }
     
 }
+.scrolltop{
+    height: 50px;
+    
+    /* background-color: #999; */
+    width: 50px;
+    position: fixed ;
+    bottom: 5px;
+    right: 5px;
+    font-size: 20px;
+}
+.scrolltop .scroll{
+    border-radius: 100%;
+    background-color:beige;
+    color: white;
+    font-size: 27px;
+    
+}
+
