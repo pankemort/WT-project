@@ -3,17 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart</title>
     <link rel="stylesheet" href="cstyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        $(document).ready(function(){
+            $('.color').click(function(){
+            console.log("clicked");
+            let colorNameClass = this.className;
+            let colorName = colorNameClass.slice(colorNameClass.indexOf('_') + 1, colorNameClass.length);
+            let type = colorNameClass.split(' ')[2]
+            let color = colorName.split(' ')[1].split('-')[1];
+            console.log(colorNameClass.split(' '));
+            if(type == "school")
+            $(".image").attr("src",`1_${color}.jpeg`)
+
+            else if (type == "bag")
+            $(".bagimg").attr("src",`2_${color}.jpeg`)
+
+            else if (type == "purse")
+            $(".bag3img").attr("src",`3_${color}.jpeg`)
+            })
+        })
+
+        $(document).ready(function(){
+            $('.color').click(function(){
+            console.log("clicked");
+            let colorNameClass = this.className;
+            console.log(colorNameClass);
+            let colorName = colorNameClass.slice(colorNameClass.indexOf('_') + 1, colorNameClass.length);
+            let color = colorName.split(' ')[1].split('-')[1];
+            
+            })
+        })
+        
+
+    </script>
 </head>
 <body>
     <div class="navbar">
         <div class="logo">
             <img src="D:\WT project\_logo2.png" width="125px" >
-        </div>
-        <div class="ul">
+        </div>        <div class="ul">
             <li><a href="D:\WT project\index.html">Home</a></li>
             <li><a href="D:\WT project\about.html"> About </a></li>
             <li><a href="D:\WT project\fav.html"> Favorites </a></li>
@@ -26,16 +59,16 @@
         <div class="project">
             <div class="shop">
                 <div class="box">
-                    <img src="D:\WT project\1_grey.jpeg" >
+                    <img class="image" src="D:\WT project\1_grey.jpeg" >
                     <!-- <img src="D:\WT project\1_grey.jpeg" > -->
                     <div class="content">
                         <h3>Urbanic - Solid outdoor backpack</h3>
                         <h2> Rs 840.00</h2>
 
                         <div class = "color-groups">
-                            <div class = "color color-grey active-color"></div>
-                            <div class = "color color-black"></div>
-                            <div class = "color color-blue"></div>
+                            <div class = "color color-grey active-color school "></div>
+                            <div class = "color color-black school"></div>
+                            <div class = "color color-blue school"></div>
                             
                           </div>
                         <!-- <p class="Color"> Colour: <select><option value="1">Grey</option>
@@ -52,13 +85,14 @@
                     </div>
                 </div>
                 <div class="box">
-                    <img src="D:\WT project\2_black.jpeg" alt="">
+                    <img class="bagimg" src="D:\WT project\2_black.jpeg" alt="">
                     <div class="content">
                         <h3>Kamiliant By American Tourister</h3>
                         <h2> Rs 1899.00</h2>
                         <div class = "color-groups">
-                            <div class = "color color-black active-color"></div>
-                            <div class = "color color-yellow"></div>
+                            <div class = "color color-black active-color bag"></div>
+                            <div class = "color color-yellow bag"></div>
+                            <div class = "color color-blue bag"></div>
                           </div>
 
                         <!-- <p class="Color"> Colour: <select><option value="1">Black</option>
@@ -76,15 +110,15 @@
                     </div>
                 </div>
                 <div class="box">
-                    <img src="D:\WT project\3_grey.jpeg" alt="">
+                    <img class="bag3img" src="D:\WT project\3_grey.jpeg" alt="">
                     <div class="content">
                         <h3>Lavie Women's Ushawu Medium Dome Satchel</h3>
                         <h2> Rs 1299.00</h2>
                         <div class = "color-groups">
-                            <div class = "color color-grey active-color"></div>
-                            <div class = "color color-black"></div>
-                            <div class = "color color-red"></div>
-                            <div class = "color color-pink"></div>
+                            <div class = "color color-grey active-color purse"></div>
+                            <div class = "color color-black purse"></div>
+                            <div class = "color color-red purse"></div>
+                            <div class = "color color-pink purse"></div>
                             
                           </div>
                         <!-- <p class="Color"> Colour: <select><option value="1">Yellow</option>
